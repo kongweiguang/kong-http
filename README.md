@@ -12,7 +12,7 @@ Maven:
 <dependency>
     <groupId>io.github.kongweiguang</groupId>
     <artifactId>kong-http</artifactId>
-    <version>0.6</version>
+    <version>1.0</version>
 </dependency>
 ```
 
@@ -36,16 +36,20 @@ Req.ws("ws://example.com/ws");
 ## 第一个请求
 
 ```java
-import io.github.kongweiguang.http.client.Req;
-import io.github.kongweiguang.http.client.Res;
+import io.github.kongweiguang.v1.http.client.Req;
+import io.github.kongweiguang.v1.http.client.Res;
 
 Res res = Req.get("http://localhost:8080/get_string")
         .query("a", "1")
         .query("b", "2")
         .ok();
 
-System.out.println(res.code());
-System.out.println(res.str());
+System.out.
+
+println(res.code());
+        System.out.
+
+println(res.str());
 ```
 
 ## 常见请求
@@ -76,7 +80,7 @@ Res res = Req.post("http://localhost:8080/post_json")
 如果已经有原始文本，也可以直接指定请求体和内容类型:
 
 ```java
-import io.github.kongweiguang.http.client.consts.ContentType;
+import consts.io.github.kongweiguang.v1.http.client.ContentType;
 
 Res res = Req.post("http://localhost:8080/post_body")
         .body("plain text body", ContentType.TEXT_PLAIN.value())
@@ -107,8 +111,8 @@ Res res = Req.multipart("http://localhost:8080/post_mul_form")
 ## Header 和 Cookie
 
 ```java
-import io.github.kongweiguang.http.client.consts.ContentType;
-import io.github.kongweiguang.http.client.consts.UserAgent;
+import consts.io.github.kongweiguang.v1.http.client.ContentType;
+import consts.io.github.kongweiguang.v1.http.client.UserAgent;
 
 Res res = Req.get("http://localhost:8080/header")
         .contentType(ContentType.JSON.value())
@@ -172,7 +176,7 @@ Res res = future.get(3, TimeUnit.MINUTES);
 全局配置通过 `Conf.global()` 设置，适合代理、线程池、连接池、拦截器这类公共能力。
 
 ```java
-import io.github.kongweiguang.http.client.core.Conf;
+
 import okhttp3.ConnectionPool;
 
 import java.net.Proxy;
@@ -180,10 +184,18 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 Conf.global()
-        .proxy("127.0.0.1", 7890)
-        .proxy(Proxy.Type.SOCKS, "127.0.0.1", 7890)
-        .connectionPool(new ConnectionPool(10, 10, TimeUnit.MINUTES))
-        .exec(Executors.newCachedThreadPool());
+        .
+
+proxy("127.0.0.1",7890)
+        .
+
+proxy(Proxy.Type.SOCKS, "127.0.0.1",7890)
+        .
+
+connectionPool(new ConnectionPool(10, 10,TimeUnit.MINUTES))
+        .
+
+exec(Executors.newCachedThreadPool());
 ```
 
 如果只想影响当前请求，可以直接挂在请求上:
@@ -204,12 +216,16 @@ Res res = Req.get("http://localhost:8080/timeout")
 - 需要看请求细节时，可以配合日志功能一起使用:
 
 ```java
-import io.github.kongweiguang.http.client.core.ReqLog;
+import core.io.github.kongweiguang.v1.http.client.ReqLog;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 Req.get("http://localhost:8080/get")
-        .log(ReqLog.console, HttpLoggingInterceptor.Level.BODY)
-        .ok();
+        .
+
+log(ReqLog.console, HttpLoggingInterceptor.Level.BODY)
+        .
+
+ok();
 ```
 
 ## 更多能力
