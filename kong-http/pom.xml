@@ -9,8 +9,9 @@
         <version>1.1</version>
     </parent>
 
+    <groupId>io.github.kongweiguang.v1</groupId>
     <artifactId>kong-http</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,15 +22,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.github.kongweiguang</groupId>
+            <groupId>io.github.kongweiguang.v1</groupId>
             <artifactId>kong-core</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
 
         <dependency>
-            <groupId>io.github.kongweiguang</groupId>
+            <groupId>io.github.kongweiguang.v1</groupId>
             <artifactId>kong-json</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
 
         <!--okhttp依赖-->

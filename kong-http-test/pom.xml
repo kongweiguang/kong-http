@@ -8,7 +8,7 @@
         <version>4.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>io.github.kongweiguang</groupId>
+    <groupId>io.github.kongweiguang.v1</groupId>
     <artifactId>kong-http-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kong-http-test</name>
@@ -16,13 +16,13 @@
 
     <properties>
         <java.version>21</java.version>
-        <kong.version>1.0</kong.version>
+        <kong.version>1.1</kong.version>
         <okhttp.version>4.12.0</okhttp.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.github.kongweiguang</groupId>
+            <groupId>io.github.kongweiguang.v1</groupId>
             <artifactId>kong-http</artifactId>
             <version>${kong.version}</version>
         </dependency>
