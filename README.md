@@ -10,11 +10,14 @@ Maven:
 
 ```xml
 <dependency>
-    <groupId>io.github.kongweiguang</groupId>
+    <groupId>io.github.kongweiguang.v1</groupId>
     <artifactId>kong-http</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
+
+1.x 使用独立的 Maven groupId 和 `io.github.kongweiguang.v1.http` Java 包，
+可与 `io.github.kongweiguang:kong-http:0.x` 同时使用。
 
 ## 核心用法
 
